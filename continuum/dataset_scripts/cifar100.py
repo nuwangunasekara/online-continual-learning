@@ -1,8 +1,8 @@
 import numpy as np
 from torchvision import datasets
-from continuum.data_utils import create_task_composition, load_task_with_labels
-from continuum.dataset_scripts.dataset_base import DatasetBase
-from continuum.non_stationary import construct_ns_multiple_wrapper, test_ns
+from avalanche.OnlineContinualLearning.continuum.data_utils import create_task_composition, load_task_with_labels
+from avalanche.OnlineContinualLearning.continuum.dataset_scripts.dataset_base import DatasetBase
+from avalanche.OnlineContinualLearning.continuum.non_stationary import construct_ns_multiple_wrapper, test_ns
 
 
 class CIFAR100(DatasetBase):

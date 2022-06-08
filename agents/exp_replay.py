@@ -1,16 +1,17 @@
 import torch
 from torch.utils import data
-from utils.buffer.buffer import Buffer
-from agents.base import ContinualLearner
-from continuum.data_utils import dataset_transform
-from utils.setup_elements import transforms_match
-from utils.utils import maybe_cuda, AverageMeter
+# from avalanche.OnlineContinualLearning.utils.buffer.buffer import Buffer
+from avalanche.OnlineContinualLearning.agents.base import ContinualLearner
+from avalanche.OnlineContinualLearning.continuum.data_utils import dataset_transform
+from avalanche.OnlineContinualLearning.utils.setup_elements import transforms_match
+from avalanche.OnlineContinualLearning.utils.utils import maybe_cuda, AverageMeter
 
 
 class ExperienceReplay(ContinualLearner):
     def __init__(self, model, opt, params):
         super(ExperienceReplay, self).__init__(model, opt, params)
-        self.buffer = Buffer(model, params)
+        self.buffer = None
+        # self.buffer = Buffer(model, params)
         self.mem_size = params.mem_size
         self.eps_mem_batch = params.eps_mem_batch
         self.mem_iters = params.mem_iters

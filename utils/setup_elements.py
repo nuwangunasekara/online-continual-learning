@@ -1,5 +1,5 @@
 import torch
-from models.resnet import Reduced_ResNet18, SupConResNet
+from avalanche.OnlineContinualLearning.models.resnet import Reduced_ResNet18, SupConResNet
 from torchvision import transforms
 import torch.nn as nn
 
@@ -12,6 +12,9 @@ input_size_match = {
     'cifar100': [3, 32, 32],
     'cifar10': [3, 32, 32],
     'core50': [3, 128, 128],
+    'CORe50': [3, 32, 32],
+    'RotatedCIFAR10': [3, 32, 32],
+    'RotatedMNIST': [1, 28, 28],
     'mini_imagenet': [3, 84, 84],
     'openloris': [3, 50, 50]
 }

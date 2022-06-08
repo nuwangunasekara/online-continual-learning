@@ -40,10 +40,15 @@ def multiple_run(params, store=False, save_path=None):
         opt = setup_opt(params.optimizer, model, params.learning_rate, params.weight_decay)
         agent = agents[params.agent](model, opt, params)
 
+        # dir = '/Users/ng98/Desktop/online-continual-learning/datasets/mini_imagenet/blur/numpy/train/'
         # prepare val data loader
         test_loaders = setup_test_loader(data_continuum.test_data(), params)
         if params.online:
             for i, (x_train, y_train, labels) in enumerate(data_continuum):
+                # with open('{}train_x_{}.npy'.format(dir, i), 'wb') as f:
+                #     np.save(f, x_train)
+                # with open('{}train_y_{}.npy'.format(dir, i), 'wb') as f:
+                #     np.save(f, y_train)
                 print("-----------run {} training batch {}-------------".format(run, i))
                 print('size: {}, {}'.format(x_train.shape, y_train.shape))
                 agent.train_learner(x_train, y_train)

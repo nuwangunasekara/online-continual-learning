@@ -1,10 +1,10 @@
 import torch
 from torch.utils import data
 import math
-from agents.base import ContinualLearner
-from continuum.data_utils import dataset_transform
-from utils.setup_elements import transforms_match, setup_architecture, setup_opt
-from utils.utils import maybe_cuda, EarlyStopping
+from avalanche.OnlineContinualLearning.agents.base import ContinualLearner
+from avalanche.OnlineContinualLearning.continuum.data_utils import dataset_transform
+from avalanche.OnlineContinualLearning.utils.setup_elements import transforms_match, setup_architecture, setup_opt
+from avalanche.OnlineContinualLearning.utils.utils import maybe_cuda, EarlyStopping
 import numpy as np
 import random
 

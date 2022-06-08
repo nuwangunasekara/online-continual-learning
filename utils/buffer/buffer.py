@@ -1,9 +1,9 @@
-from utils.setup_elements import input_size_match
-from utils import name_match #import update_methods, retrieve_methods
-from utils.utils import maybe_cuda
+from avalanche.OnlineContinualLearning.utils.setup_elements import input_size_match
+from avalanche.OnlineContinualLearning.utils import name_match #import update_methods, retrieve_methods
+from avalanche.OnlineContinualLearning.utils.utils import maybe_cuda
 import torch
-from utils.buffer.buffer_utils import BufferClassTracker
-from utils.setup_elements import n_classes
+from avalanche.OnlineContinualLearning.utils.buffer.buffer_utils import BufferClassTracker
+from avalanche.OnlineContinualLearning.utils.setup_elements import n_classes
 
 class Buffer(torch.nn.Module):
     def __init__(self, model, params):

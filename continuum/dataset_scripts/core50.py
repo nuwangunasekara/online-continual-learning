@@ -1,11 +1,11 @@
 import os
-from continuum.dataset_scripts.dataset_base import DatasetBase
+from avalanche.OnlineContinualLearning.continuum.dataset_scripts.dataset_base import DatasetBase
 import pickle as pkl
 import logging
 from hashlib import md5
 import numpy as np
 from PIL import Image
-from continuum.data_utils import shuffle_data, load_task_with_labels
+from avalanche.OnlineContinualLearning.continuum.data_utils import shuffle_data, load_task_with_labels
 import time
 
 core50_ntask = {

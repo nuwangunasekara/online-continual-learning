@@ -3,11 +3,11 @@ import abc
 import numpy as np
 import torch
 from torch.nn import functional as F
-from utils.kd_manager import KdManager
-from utils.utils import maybe_cuda, AverageMeter
+from avalanche.OnlineContinualLearning.utils.kd_manager import KdManager
+from avalanche.OnlineContinualLearning.utils.utils import maybe_cuda, AverageMeter
 from torch.utils.data import TensorDataset, DataLoader
 import copy
-from utils.loss import SupConLoss
+from avalanche.OnlineContinualLearning.utils.loss import SupConLoss
 import pickle
 
 
@@ -152,6 +152,7 @@ class ContinualLearner(torch.nn.Module, metaclass=abc.ABCMeta):
                 correct_lb = []
                 predict_lb = []
             for task, test_loader in enumerate(test_loaders):
+                print("Evaluation task = ", task)
                 acc = AverageMeter()
                 for i, (batch_x, batch_y) in enumerate(test_loader):
                     batch_x = maybe_cuda(batch_x, self.cuda)

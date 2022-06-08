@@ -1,4 +1,4 @@
-from utils.buffer.buffer_utils import random_retrieve
+from avalanche.OnlineContinualLearning.utils.buffer.buffer_utils import random_retrieve
 
 class Random_retrieve(object):
     def __init__(self, params):

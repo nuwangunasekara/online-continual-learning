@@ -1,7 +1,7 @@
 import torch
-from utils.utils import maybe_cuda
+from avalanche.OnlineContinualLearning.utils.utils import maybe_cuda
 import torch.nn.functional as F
-from utils.buffer.buffer_utils import random_retrieve, get_grad_vector
+from avalanche.OnlineContinualLearning.utils.buffer.buffer_utils import random_retrieve, get_grad_vector
 import copy
 
 

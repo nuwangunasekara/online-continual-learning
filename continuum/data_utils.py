@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 from torch.utils import data
-from utils.setup_elements import transforms_match
+from avalanche.OnlineContinualLearning.utils.setup_elements import transforms_match
 
 def create_task_composition(class_nums, num_tasks, fixed_order=False):
     classes_per_task = class_nums // num_tasks
@@ -56,11 +56,17 @@ class dataset_transform(data.Dataset):
 
 def setup_test_loader(test_data, params):
     test_loaders = []
-
+    # i = 0
+    # dir = '/Users/ng98/Desktop/online-continual-learning/datasets/mini_imagenet/blur/numpy/test/'
     for (x_test, y_test) in test_data:
+        # with open('{}test_x_{}.npy'.format(dir, i), 'wb') as f:
+        #     np.save(f, x_test)
+        # with open('{}test_y_{}.npy'.format(dir, i), 'wb') as f:
+        #     np.save(f, y_test)
         test_dataset = dataset_transform(x_test, y_test, transform=transforms_match[params.data])
         test_loader = data.DataLoader(test_dataset, batch_size=params.test_batch, shuffle=True, num_workers=0)
         test_loaders.append(test_loader)
+        # i += 1
     return test_loaders
 
 

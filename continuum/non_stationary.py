@@ -3,7 +3,7 @@ from copy import deepcopy
 import matplotlib.pyplot as plt
 import numpy as np
 from skimage.filters import gaussian
-from continuum.data_utils import train_val_test_split_ni
+from avalanche.OnlineContinualLearning.continuum.data_utils import train_val_test_split_ni
 
 
 class Original(object):

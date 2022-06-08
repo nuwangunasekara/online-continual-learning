@@ -1,9 +1,9 @@
 import glob
 from PIL import Image
 import numpy as np
-from continuum.dataset_scripts.dataset_base import DatasetBase
+from avalanche.OnlineContinualLearning.continuum.dataset_scripts.dataset_base import DatasetBase
 import time
-from continuum.data_utils import shuffle_data
+from avalanche.OnlineContinualLearning.continuum.data_utils import shuffle_data
 
 
 class OpenLORIS(DatasetBase):

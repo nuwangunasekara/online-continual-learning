@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-from utils.utils import maybe_cuda
+from avalanche.OnlineContinualLearning.utils.utils import maybe_cuda
 from collections import defaultdict
 from collections import Counter
 import random
